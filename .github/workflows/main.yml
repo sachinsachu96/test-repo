@@ -11,8 +11,6 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v3
-    - name: Change ownership of the directory
-      run: sudo chown -R $USER:$USER /home/ubuntu/actions-runner/action/test-repo
 
     - name: Deploy to server
       run: |
