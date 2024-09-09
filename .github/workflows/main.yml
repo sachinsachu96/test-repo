@@ -9,10 +9,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: ssh action
-      uses: appleboy/ssh-action@master
-    
-        script: |
-          sudo mkdir test # create folder you want to deploy to in the live server
-          cd test # enter or cd into the folder
-          sudo git clone https://github.com/sachinsachu96/test-repo.git
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Deploy to server
+      run: |
+        sudo mkdir -p test   # Create directory if it doesn't exist
+        cd test              # Change to the directory
+        sudo git clone https://github.com/sachinsachu96/test-repo.git
