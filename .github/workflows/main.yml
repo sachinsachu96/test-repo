@@ -15,6 +15,4 @@ jobs:
     - name: Deploy to server
       run: |
         sudo mkdir -p test   # Create directory if it doesn't exist
-        cd test              # Change to the directory
-        sudo git clone https://github.com/sachinsachu96/test-repo.git
         pwd
